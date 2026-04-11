@@ -49,3 +49,48 @@ Woof
 ...
 
 '''
+
+
+result = []
+for i in range(3):
+    result.append(lambda: i)
+
+print([f() for f in result])
+
+print(result)
+
+# for i in range(3):
+#     print(i)
+
+'''
+O/P
+
+[2, 2, 2]
+[<function <lambda> at 0x102f30790>, <function <lambda> at 0x102f309d0>, <function <lambda> at 0x102f30a60>]
+
+'''
+
+class A:
+    def hello(self):
+        return "A"
+    
+class B(A):
+    def hello(self):
+        return "B"
+
+class C(A):
+    def hello(self):
+        return "C"
+    
+class D(B,C):
+    pass
+
+print(D().hello())
+# print(D.__mro__)
+
+'''
+O/P
+
+B
+
+'''
